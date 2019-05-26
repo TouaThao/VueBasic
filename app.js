@@ -12,6 +12,9 @@ new Vue({
         }
     },
     methods: {
+        updateName(event){
+            this.name = event.target.value
+        },
         greet(time) {
             return `Hello and good ${time}, ${this.name}`
         },
