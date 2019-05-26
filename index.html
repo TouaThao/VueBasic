@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+    .one{
+        color:green
+    }
+    .two{
+        text-decoration: line-through
+    }
+    .canvas{
+        width: 300px;
+        height: 300px;
+        margin-top:20px;
+        background: #ddd;
+    }
+        </style>
+</head>
+
+<body>
+    <h1>Vue</h1>
+    <div id="app">
+        <h2>{{ title}}</h2>
+        <p>{{ greet ('morning') }}</p>
+        <a :href="url">YouTube</a>
+        <div :class="classes">class from instance</div>
+        <input type="text" :value="name">
+        <p>I earn {{wage}} dollar per hours</p>
+        <button v-on:click="changeWage(1)">Increase wage by 1 dollar</button>
+        <button v-on:click="changeWage(-1)">Decrease wage by 1 dollar</button>
+        <button @click='logEvent'>Log Event button</button>
+        <div class="canvas" @mousemove='logCoords'>{{coords.x}},{{coords.y}} </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
