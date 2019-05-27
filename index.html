@@ -8,19 +8,21 @@
     <title>Vue</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <style>
-    .one{
-        color:green
-    }
-    .two{
-        text-decoration: line-through
-    }
-    .canvas{
-        width: 300px;
-        height: 300px;
-        margin-top:20px;
-        background: #ddd;
-    }
-        </style>
+        .one {
+            color: green
+        }
+
+        .two {
+            text-decoration: line-through
+        }
+
+        .canvas {
+            width: 300px;
+            height: 300px;
+            margin-top: 20px;
+            background: #ddd;
+        }
+    </style>
 </head>
 
 <body>
@@ -36,8 +38,12 @@
         <button @click="changeWage(-1)">Decrease wage by 1 dollar</button>
         <button @click='logEvent'>Log Event button</button>
         <div class="canvas" @mousemove='logCoords'>{{coords.x}},{{coords.y}} </div>
-        <h1>Keybord event target</h1>
+        <h1>Keyboard event target</h1>
         <input type="text" @keyup='updateName'>
+    </div>
+    <div>
+        <h1>Two way databinding</h1>
+        <input type="text" v-model='name'>
     </div>
     <script src="app.js"></script>
 </body>
