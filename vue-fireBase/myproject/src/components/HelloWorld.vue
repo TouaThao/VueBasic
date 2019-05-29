@@ -1,16 +1,40 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-
+    <Navbar/>
+    <AllFriend :friends="friends" @delete="deleteFriends" />
+    <OnlineFriend :friends="friends" />
   </div>
 </template>
 
 <script>
+import Navbar from '../components/Navbar'
+import AllFriend from '../components/AllFriend'
+import OnlineFriend from '../components/OnlineFriend'
 export default {
   name: 'HelloWorld',
+  components: {
+    Navbar: Navbar,
+    AllFriend,
+    OnlineFriend
+  },
   data () {
     return {
-      msg: 'My first vue app'
+      msg: 'My first vue app',
+      friends: [
+        { name: 'Mario', online: true },
+        { name: 'Luigi', online: false },
+        { name: 'Bowser', online: true },
+        { name: 'Peach', online: false }
+      ]
+    }
+  },
+  methods: {
+    deleteFriends (payload) {
+      console.log(payload, ' testing the payload')
+      this.friends = this.friends.filter(friends => {
+        return friends.name !== payload.name
+      })
     }
   }
 }
@@ -18,18 +42,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.hello{
+  text-align: center;
 }
 </style>
