@@ -4,6 +4,7 @@
     <Navbar/>
     <AllFriend :friends="friends" @delete="deleteFriends" />
     <OnlineFriend :friends="friends" />
+    <blog/>
   </div>
 </template>
 
@@ -11,12 +12,14 @@
 import Navbar from '../components/Navbar'
 import AllFriend from '../components/AllFriend'
 import OnlineFriend from '../components/OnlineFriend'
+import blog from '../components/Blog'
 export default {
   name: 'HelloWorld',
   components: {
     Navbar: Navbar,
     AllFriend,
-    OnlineFriend
+    OnlineFriend,
+    blog
   },
   data () {
     return {
