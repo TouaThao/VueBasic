@@ -19,13 +19,13 @@ export default {
     }
   },
   beforeCreate () {
-    alert('beforeCreate hook')
+    console.log('beforeCreate hook')
   },
   created () {
-    alert(' created hook')
+    console.log(' created hook')
   },
   beforeUpdate () {
-    alert(' created hook')
+    console.log(' created hook')
   }
 }
 </script>
